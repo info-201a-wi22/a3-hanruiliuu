@@ -1,0 +1,59 @@
+---
+title: "A3 index.Rmd"
+author: "Han Rui Liu"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("../source/analysis.R")
+library(knitr)
+```
+
+## Introduction + Summary information
+
+This report will compare the different races and amounts of incarcerated people in California. 
+
+1. What is the amount of Asian American and Pacific Islanders that were incarcerated in California in 2018?
+    - `r aapi_incar_2018`
+
+2. How many Native Americans were incarcerated in California in the year 2018?
+    - `r native_incar_2018`
+    
+3. The amount of Latinx incarcerated in California in the year 2018 is?
+    - `r latinx_incar_2018`
+    
+4. How do the incarcerations of different races compare in California?
+    `r kable(compare_races)`
+5. What is the top county of Asian American and Pacific Islander incarcerations in California in the year 2018?
+
+```{r, echo=FALSE}
+kable(top_county_aapi)
+```
+6. What is the top county of Native incarcerations in California in the year 2018?
+
+```{r, echo=FALSE}
+kable(top_county_native)
+```
+7. What is the top county of Latinx incarcerations in California in the year 2018?
+
+```{r, echo=FALSE}
+kable(top_county_latinx)
+```
+
+## Trends Over Time Chart
+This chart compares the different races of incarcerated people in California throughout the years 1970-2018. This compares the Asian American Pacific Islanders, Black, Latinx, Native, and White. The main goal of this chart is to see the differences of incarcerations of the different races in California. This shows that latinx has the highest amount of incarcerations. 
+
+```{r, echo = FALSE}
+compare_races_chart
+```
+
+## Variable comparison chart
+
+This chart is a scatter plot representing the difference between the rate of Asian American and Pacific Islander incarcerations to the Latinx incarcerations in California. From this I found that the Latinx has a much higher amount of incarcerations.
+```{r, echo = FALSE}
+compare_inc_chart
+```
+
+## Map
